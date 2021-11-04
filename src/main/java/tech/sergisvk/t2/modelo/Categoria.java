@@ -6,6 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Categoria {
 
+    // Define la clave principal en la base de datos
     @Id
     @GeneratedValue
     private Long id;
@@ -18,6 +19,12 @@ public class Categoria {
 
     public Categoria() { }
 
+    /**
+     * Para crear una categoría se le tiene que añadir los siguientes valores
+     * @param nombre del producto
+     * @param destacada si es o no destacado
+     * @param imagen sobre la categoría
+     */
     public Categoria(String nombre, boolean destacada, String imagen) {
         this.nombre = nombre;
         this.destacada = destacada;

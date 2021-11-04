@@ -15,7 +15,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.URL;
 
-//https://www.baeldung.com/
 
 @Entity
 public class Producto {
@@ -27,7 +26,13 @@ public class Producto {
     @NotEmpty
     private String nombre;
 
+    /**
+     * Es un tipo de datos para almacenar datos de objetos grandes. Siendo BLOB y CLOB.
+     * BLOB es para almacenar datos binarios y CLOB para almacenar datos de texto.
+     * Siendo la descripción del producto, nos interesa guardar datos de texto. ASí que usaremos CLOB
+     */
     @Lob
+    //@Column(name = "descripcion", columnDefinition="VARCHAR(128)") ¿?
     private String descripcion;
 
     @Min(0)

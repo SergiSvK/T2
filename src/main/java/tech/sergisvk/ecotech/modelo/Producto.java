@@ -1,4 +1,4 @@
-package tech.sergisvk.t2.modelo;
+package tech.sergisvk.ecotech.modelo;
 
 import java.util.HashSet;
 import java.util.Set;

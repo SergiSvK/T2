@@ -1,9 +1,9 @@
-package tech.sergisvk.t2.repositorios;
+package tech.sergisvk.ecotech.repositorios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import tech.sergisvk.t2.modelo.Categoria;
-import tech.sergisvk.t2.modelo.Producto;
+import tech.sergisvk.ecotech.modelo.Categoria;
+import tech.sergisvk.ecotech.modelo.Producto;
 
 import java.util.List;
 

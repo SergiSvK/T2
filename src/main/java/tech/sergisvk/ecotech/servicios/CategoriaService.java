@@ -1,9 +1,9 @@
-package tech.sergisvk.t2.servicios;
+package tech.sergisvk.ecotech.servicios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tech.sergisvk.t2.modelo.Categoria;
-import tech.sergisvk.t2.repositorios.CategoriaRepository;
+import tech.sergisvk.ecotech.modelo.Categoria;
+import tech.sergisvk.ecotech.repositorios.CategoriaRepository;
 
 import java.util.List;
 

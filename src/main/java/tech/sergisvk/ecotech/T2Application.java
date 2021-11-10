@@ -1,4 +1,4 @@
-package tech.sergisvk.t2;
+package tech.sergisvk.ecotech;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

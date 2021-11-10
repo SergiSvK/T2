@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<head th:replace="head/head :: mihead"></head>
+    <head th:replace="head/head :: mihead"></head>
     <body>
-    <th:block th:insert="~{menu/menu :: menu}" />
-    <main class="container">
-        <!--  según el parámetro "contenido" mostrar la palntilla correspondiente-->
-        <div th:switch="${contenido}">
-            <!--
-            <div th:case="'plantilla1'">
-                <th:block th:insert="~{info/plantilla1 :: plantilla1}" />
-            </div>
-            <div th:case="'categorias'">
-                <th:block th:insert="~{info/categorias :: categorias}" />
-            </div>-->
-        </div>
-    </main>
-    <th:block th:insert="~{pie/pie :: pie}" />
-    <th:block th:insert="~{js/javascript :: js}" />
-</body>
+        <!--Mi barra de navegación-->
+        <div th:replace="navegation/menu :: menu" ></div>
+        <main>
+            <!-- contenido de la web -->
+        </main>
+        <th:block th:insert="~{footer/footer :: pie}"/>
+        <th:block th:insert="~{js/javascript :: js}" />
+    </body>
 </html>

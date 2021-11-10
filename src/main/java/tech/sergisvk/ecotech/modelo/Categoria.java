@@ -1,4 +1,4 @@
-package tech.sergisvk.t2.modelo;
+package tech.sergisvk.ecotech.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,6 +31,7 @@ public class Categoria {
         this.imagen = imagen;
     }
 
+    //getter and setters
     public Long getId() {
         return id;
     }

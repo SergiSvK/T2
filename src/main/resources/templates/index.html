@@ -6,9 +6,12 @@
         <div th:replace="navegation/menu :: menu" ></div>
         <main>
             <!-- contenido de la web -->
+            <th:block th:insert="~{windows/front :: front}"/>
+            <th:block th:insert="~{windows/front :: about}"/>
+            <th:block th:insert="~{windows/front :: steps}"/>
             <th:block th:insert="~{windows/contact :: contact}"/>
         </main>
         <th:block th:insert="~{footer/footer :: pie}"/>
-        <th:block th:insert="~{js/javascript :: js}" />
+        <th:block th:insert="~{js/javascript :: js}"/>
     </body>
 </html>

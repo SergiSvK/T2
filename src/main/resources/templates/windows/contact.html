@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
     <body>
-        <section th:fragment="inicio" class="contact section container" id="contact">
+        <!--==================== CONTACT ====================-->
+        <section th:fragment="contact" class="contact section container" id="contact">
             <div class="contact__container grid">
                 <div class="contact__box">
                     <h2 class="section__title">
                         Ponga en contactos <br> con nosotros <br> hoy
                     </h2>
 
+                    <!--
+                    <span class="contact__description">
+                        <i class="ri-phone-line contact__icon"></i>
+                        +999 888 777
+                    </span> -->
+
                     <div class="contact__data">
                         <div class="contact__information">
                             <h3 class="contact__subtitle">Teléfono</h3>
-                            <span class="contact__description">
-                                        <i class="ri-phone-line contact__icon"></i>
-                                        +999 888 777
-                                    </span>
+                            <div class="contact__description">
+                                <i class="ri-phone-line contact__icon"></i>
+                                <a th:text="${phone}"></a>
+                            </div>
                         </div>
+
+                        <!--
+                        <span class="contact__description">
+                                <i class="ri-mail-line contact__icon"></i> user@
+                            </span>-->
 
                         <div class="contact__information">
                             <h3 class="contact__subtitle">Escríbenos</h3>
-                            <span class="contact__description">
-                                <i class="ri-mail-line contact__icon"></i> user@email.com
-                            </span>
+                            <div class="contact__description">
+                                <i class="ri-mail-line contact__icon"></i>
+                                <p><a>contacto@</a><a th:text="${domain}"></a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +43,7 @@
                     <div class="contact__inputs">
                         <div class="contact__content">
                             <input type="email" placeholder=" " class="contact__input">
-                            <label for="" class="contact__label">Corre</label>
+                            <label for="" class="contact__label">Correo</label>
                         </div>
 
                         <div class="contact__content">

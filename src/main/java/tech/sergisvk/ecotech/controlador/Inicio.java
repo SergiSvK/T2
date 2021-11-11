@@ -43,6 +43,7 @@ public class Inicio {
         model.addAttribute("nameShop", Config.nameShop);
         model.addAttribute("year", year);
         model.addAttribute("domain", Config.domain);
+        model.addAttribute("phone",Config.phone);
         //model.addAttribute("contenido","plantilla1");
         return "index";
     }

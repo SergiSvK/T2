@@ -8,6 +8,9 @@ import tech.sergisvk.ecotech.DominioSesion;
 import tech.sergisvk.ecotech.config.Config;
 import tech.sergisvk.ecotech.servicios.CategoriaService;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Con la anotación @Controller se podrá detectar la clase Inicio cuando realice el escaneo de componentes.
  */
@@ -24,15 +27,23 @@ public class Inicio {
     @Autowired
     private CategoriaService catService;
 
+    //Datos usados para obtener el año actual
+    Date date = new Date();
+    SimpleDateFormat getYearFormat = new SimpleDateFormat("yyyy");
+    String year = getYearFormat.format(date);
+
     /**
      * Index
-     * @param model
+     * @param model brinda la capacidad de pasar una colección de valores y tratar estos valores como si estuvieran
+     * dentro del mapa
      * @return index con las configuraciones pasadas
      */
     @GetMapping({"/","","/home","/inicio","/index"})
     public String index(Model model) {
-        model.addAttribute("nombreTienda", Config.nombreTienda);
-        model.addAttribute("contenido","plantilla1");
+        model.addAttribute("nameShop", Config.nameShop);
+        model.addAttribute("year", year);
+        model.addAttribute("domain", Config.domain);
+        //model.addAttribute("contenido","plantilla1");
         return "index";
     }
 

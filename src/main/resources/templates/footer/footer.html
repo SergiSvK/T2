@@ -13,7 +13,7 @@
 
             <div class="nav__logo">
               <i class="ri-leaf-line nav__logo-icon"></i>
-              <a th:text="${nombreTienda}"></a>
+              <a th:text="${nameShop}"></a>
             </div>
 
             <h3 class="footer__title">
@@ -69,15 +69,12 @@
               <img src="/img/card1.png" alt="" class="footer__card">
               <img src="/img/card2.png" alt="" class="footer__card">
               <img src="/img/card3.png" alt="" class="footer__card">
-              <a href="https://www.discover.com/" class="footer__card">
-                <img src="/img/card4.png">
-              </a>
-
+              <img src="/img/card4.png" alt="" class="footer__card">
             </div>
           </div>
         </div>
-        <!--Nombre de la tienda que se le pase-->
-        <p class="footer__copy">Copyright &#169; <a th:text="${nombreTienda}"></a> All rigths reserved</p>
+        <!--Nombre y año actual-->
+        <p class="footer__copy">Copyright &#169;<a th:text="${year} "></a> <a th:text="${nameShop}"></a>. All rigths reserved.</p>
       </footer>
     </div>
   </body>

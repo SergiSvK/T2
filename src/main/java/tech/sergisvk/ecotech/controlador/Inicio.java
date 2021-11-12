@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import tech.sergisvk.ecotech.DominioSesion;
-import tech.sergisvk.ecotech.config.Config;
+import tech.sergisvk.ecotech.config.ConfigVariables;
 import tech.sergisvk.ecotech.servicios.CategoriaService;
 
 import java.text.SimpleDateFormat;
@@ -40,10 +40,10 @@ public class Inicio {
      */
     @GetMapping({"/","","/home","/inicio","/index"})
     public String index(Model model) {
-        model.addAttribute("nameShop", Config.nameShop);
+        model.addAttribute("nameShop", ConfigVariables.nameShop);
         model.addAttribute("year", year);
-        model.addAttribute("domain", Config.domain);
-        model.addAttribute("phone",Config.phone);
+        model.addAttribute("domain", ConfigVariables.domain);
+        model.addAttribute("phone", ConfigVariables.phone);
         //model.addAttribute("contenido","plantilla1");
         return "index";
     }

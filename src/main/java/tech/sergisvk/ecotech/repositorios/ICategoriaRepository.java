@@ -6,7 +6,7 @@ import tech.sergisvk.ecotech.modelo.Categoria;
 
 import java.util.List;
 
-public interface CategoriaRepository extends JpaRepository<Categoria,Long> {
+public interface ICategoriaRepository extends JpaRepository<Categoria,Long> {
 
     @Query("select c from Categoria c where c.destacada = true")
     List<Categoria> findDestacadas();

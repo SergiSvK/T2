@@ -18,15 +18,14 @@ import java.util.Date;
 @Controller
 public class Inicio {
 
-    /*
-     * Inspeccionará el contenedor y buscará un bean con el nombre exacto como propiedad para conectarlo automáticamente.
-     * Por lo tanto, inyecta esa implementación específica al construir dominioSesion.
-     */
-    @Autowired
     private DominioSesion dominioSesion;
 
-    @Autowired
     private CategoriaService catService;
+
+    public Inicio(DominioSesion dominioSesion, CategoriaService catService) {
+        this.dominioSesion = dominioSesion;
+        this.catService = catService;
+    }
 
     //Datos usados para obtener el año actual
     Date date = new Date();

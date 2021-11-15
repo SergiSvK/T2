@@ -1,6 +1,5 @@
 package tech.sergisvk.ecotech.servicios;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.sergisvk.ecotech.modelo.Categoria;
 import tech.sergisvk.ecotech.repositorios.ICategoriaRepository;
@@ -13,8 +12,12 @@ import java.util.List;
  */
 @Service
 public class CategoriaService {
-    @Autowired
-    private ICategoriaRepository repositorio;
+
+    private final ICategoriaRepository repositorio;
+
+    public CategoriaService(ICategoriaRepository repositorio) {
+        this.repositorio = repositorio;
+    }
 
     public List<Categoria> findAll() {
         return repositorio.findAll();
@@ -27,7 +30,6 @@ public class CategoriaService {
     public Categoria save(Categoria categoria) {
         return repositorio.save(categoria);
     }
-
 
     public Categoria findById(Long id) {
         return repositorio.findById(id).orElse(null);

@@ -8,10 +8,15 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
 
-
 @Entity
+@Getter @Setter @NoArgsConstructor
+@ToString
 public class Producto {
 
     @Id
@@ -73,12 +78,6 @@ public class Producto {
     @OneToMany(mappedBy="producto", cascade=CascadeType.ALL, orphanRemoval=true, fetch=FetchType.EAGER)
     private Set<Puntuacion> puntuaciones = new HashSet<Puntuacion>();
 
-    public Producto() {
-        //void
-    }
-
-
-
     /**
      * Información que necesitamos saber sobre el producto
      * @param nombre que vaya a recibir
@@ -99,75 +98,6 @@ public class Producto {
         this.categoria = categoria;
         this.propietario = propietario;
     }
-
-
-    //Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public float getPvp() {
-        return pvp;
-    }
-
-    public void setPvp(float pvp) {
-        this.pvp = pvp;
-    }
-
-    public float getDescuento() {
-        return descuento;
-    }
-
-    public void setDescuento(float descuento) {
-        this.descuento = descuento;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public Set<Puntuacion> getPuntuaciones() {
-        return puntuaciones;
-    }
-
-    public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
-        this.puntuaciones = puntuaciones;
-    }
-
     /**
      * Métodos helper
      */
@@ -175,7 +105,6 @@ public class Producto {
         this.puntuaciones.add(puntuacion);
         puntuacion.setProducto(this);
     }
-
 
     public double getPuntuacionMedia() {
         if (this.puntuaciones.isEmpty())
@@ -190,6 +119,5 @@ public class Producto {
     public double getNumeroTotalPuntuaciones() {
         return this.puntuaciones.size();
     }
-
 
 }

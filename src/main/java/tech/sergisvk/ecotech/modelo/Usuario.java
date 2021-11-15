@@ -1,15 +1,17 @@
 package tech.sergisvk.ecotech.modelo;
 
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+@Getter @Setter @NoArgsConstructor
+@ToString @EqualsAndHashCode
 public class Usuario {
 
     @Id
@@ -27,11 +29,8 @@ public class Usuario {
     private String email;
     private String password;
 
-    public Usuario() {
-    }
-
     /**
-     *
+     * Los datos que se pueden establecer al usuario son todos me la ID
      * @param nombre
      * @param apellidos
      * @param avatar
@@ -46,89 +45,5 @@ public class Usuario {
         this.fechaAlta = fechaAlta;
         this.email = email;
         this.password = password;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public Date getFechaAlta() {
-        return fechaAlta;
-    }
-
-    public void setFechaAlta(Date fechaAlta) {
-        this.fechaAlta = fechaAlta;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Usuario usuario = (Usuario) o;
-        return id == usuario.id && Objects.equals(nombre, usuario.nombre) && Objects.equals(apellidos, usuario.apellidos)
-                && Objects.equals(avatar, usuario.avatar) && Objects.equals(fechaAlta, usuario.fechaAlta) &&
-                Objects.equals(email, usuario.email) && Objects.equals(password, usuario.password);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre, apellidos, avatar, fechaAlta, email, password);
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", avatar='" + avatar + '\'' +
-                ", fechaAlta=" + fechaAlta +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }

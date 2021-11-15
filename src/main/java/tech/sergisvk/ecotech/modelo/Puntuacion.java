@@ -1,5 +1,8 @@
 package tech.sergisvk.ecotech.modelo;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -10,6 +13,7 @@ import java.util.Date;
  * una fila en la tabla.
  */
 @Entity
+@Getter @Setter @NoArgsConstructor
 public class Puntuacion {
 
     // Define la clave principal
@@ -32,10 +36,6 @@ public class Puntuacion {
     @ManyToOne
     private Producto producto;
 
-    public Puntuacion() {
-        //Void
-    }
-
     /**
      * Que valor va a recibir el producto seleccionado, no se puede ni cambiar la fecha de creacíon ni su id
      * @param puntuacion  Que se le da al producto
@@ -46,37 +46,4 @@ public class Puntuacion {
         this.producto = producto;
     }
 
-    //Getter y Setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public int getPuntuacion() {
-        return puntuacion;
-    }
-
-    public void setPuntuacion(int puntuacion) {
-        this.puntuacion = puntuacion;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
 }

@@ -1,9 +1,18 @@
 package tech.sergisvk.ecotech.modelo;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+/*
+ * Al agregar las anotaciones @Getter y @Setter , le dijimos a Lombok que las generara para todos los campos de la clase.
+ * @NoArgsConstructor conducirá a una generación de constructor vacía.
+ */
+@Getter @Setter @NoArgsConstructor
 public class Categoria {
 
     // Define la clave principal en la base de datos
@@ -17,10 +26,8 @@ public class Categoria {
 
     private String imagen;
 
-    public Categoria() { }
-
     /**
-     * Para crear una categoría se le tiene que añadir los siguientes valores
+     * Para crear una categoría tiene que tener los valores
      * @param nombre del producto
      * @param destacada si es o no destacado
      * @param imagen sobre la categoría
@@ -28,39 +35,6 @@ public class Categoria {
     public Categoria(String nombre, boolean destacada, String imagen) {
         this.nombre = nombre;
         this.destacada = destacada;
-        this.imagen = imagen;
-    }
-
-    //getter and setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public boolean isDestacada() {
-        return destacada;
-    }
-
-    public void setDestacada(boolean destacada) {
-        this.destacada = destacada;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

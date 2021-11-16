@@ -73,8 +73,8 @@
             </div>
           </div>
         </div>
-        <!--Nombre y año actual-->
-        <p class="footer__copy">Copyright &#169;<a th:text="${year} "></a> <a th:text="${nameShop}"></a>. All rigths reserved.</p>
+        <!--Nombre de la tienda convirtiendo carácter de cada palabra a mayúsculas y año actual-->
+        <p class="footer__copy">Copyright &#169; <a th:text="${year} "></a> <a th:text="${#strings.capitalizeWords(nameShop)}"></a>. All rigths reserved.</p>
       </footer>
     </div>
   </body>

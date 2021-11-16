@@ -1,7 +1,5 @@
 package tech.sergisvk.ecotech.controlador;
 
-import org.dom4j.rule.Mode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +7,7 @@ import tech.sergisvk.ecotech.DominioSesion;
 import tech.sergisvk.ecotech.config.ConfigVariables;
 import tech.sergisvk.ecotech.servicios.CategoriaService;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.net.MalformedURLException;
 
 /**
  * Con la anotación @Controller se podrá detectar la clase Inicio cuando realice el escaneo de componentes.
@@ -18,19 +15,14 @@ import java.util.Date;
 @Controller
 public class Inicio {
 
-    private DominioSesion dominioSesion;
+    final private DominioSesion dominioSesion;
 
-    private CategoriaService catService;
+    final private CategoriaService catService;
 
     public Inicio(DominioSesion dominioSesion, CategoriaService catService) {
         this.dominioSesion = dominioSesion;
         this.catService = catService;
     }
-
-    //Datos usados para obtener el año actual
-    Date date = new Date();
-    SimpleDateFormat getYearFormat = new SimpleDateFormat("yyyy");
-    String year = getYearFormat.format(date);
 
     /**
      * Index
@@ -39,12 +31,11 @@ public class Inicio {
      * @return index con las configuraciones pasadas
      */
     @GetMapping({"/","","/home","/inicio","/index"})
-    public String index(Model model) {
-        model.addAttribute("nameShop", ConfigVariables.nameShop);
-        model.addAttribute("year", year);
-        model.addAttribute("domain", ConfigVariables.domain);
+    public String index(Model model) throws MalformedURLException {
+        model.addAttribute("nameShop", ConfigVariables.hostURL().getHost());
+        model.addAttribute("year", ConfigVariables.yearString());
+        model.addAttribute("domain", ConfigVariables.hostURL().getHost());
         model.addAttribute("phone", ConfigVariables.phone);
-        //model.addAttribute("contenido","plantilla1");
         return "index";
     }
 

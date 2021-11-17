@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * A partir de la Versión Spring 2.5
- * Como resultado de la etiqueta, escaneará automáticamenmte los componentes del paquete actual y sus subpaquetes.
+ * Como resultado de la etiqueta, escaneará automáticamente los componentes del paquete actual y sus subpaquetes.
  * Por lo tanto, los registrará en el contexto de aplicación de Spring y nos permitirá inyectar beans usando el @Autorwied
  * (Inicio del cableado)
  */

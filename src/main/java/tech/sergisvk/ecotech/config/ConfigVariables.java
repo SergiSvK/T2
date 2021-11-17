@@ -24,6 +24,7 @@ public class ConfigVariables {
                         fromCurrentContextPath().
                         build().
                         toUriString();
+
         return new URL(currentURL);
     }
 

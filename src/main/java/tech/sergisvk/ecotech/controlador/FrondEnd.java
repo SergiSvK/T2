@@ -13,13 +13,13 @@ import java.net.MalformedURLException;
  * Con la anotación @Controller se podrá detectar la clase Inicio cuando realice el escaneo de componentes.
  */
 @Controller
-public class Inicio {
+public class FrondEnd {
 
     final private DominioSesion dominioSesion;
 
     final private CategoriaService catService;
 
-    public Inicio(DominioSesion dominioSesion, CategoriaService catService) {
+    public FrondEnd(DominioSesion dominioSesion, CategoriaService catService) {
         this.dominioSesion = dominioSesion;
         this.catService = catService;
     }

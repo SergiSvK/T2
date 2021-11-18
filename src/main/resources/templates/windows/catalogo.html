@@ -13,11 +13,11 @@
                 shape and has a long life span. Buy and enjoy best quality.
             </p>
 
-            <div class="product__container grid">
+            <div class="product__container grid" th:each="producto:${productos}">
                 <article class="product__card">
                     <div class="product__circle"></div>
 
-                    <img src="img/product1.png" alt="" class="product__img">
+                    <img th:src="producto.imagen" src="img/product1.png" alt="" class="product__img">
 
                     <h3 class="product__title">Cacti Plant</h3>
                     <span class="product__price">$19.99</span>

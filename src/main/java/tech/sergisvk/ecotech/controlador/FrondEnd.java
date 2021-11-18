@@ -1,11 +1,13 @@
 package tech.sergisvk.ecotech.controlador;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import tech.sergisvk.ecotech.DominioSesion;
 import tech.sergisvk.ecotech.config.ConfigVariables;
 import tech.sergisvk.ecotech.servicios.CategoriaService;
+import tech.sergisvk.ecotech.servicios.ProductoService;
 
 import java.net.MalformedURLException;
 
@@ -18,6 +20,9 @@ public class FrondEnd {
     final private DominioSesion dominioSesion;
 
     final private CategoriaService catService;
+
+    @Autowired
+    private ProductoService producto;
 
     public FrondEnd(DominioSesion dominioSesion, CategoriaService catService) {
         this.dominioSesion = dominioSesion;
@@ -36,6 +41,7 @@ public class FrondEnd {
         model.addAttribute("year", ConfigVariables.yearString());
         model.addAttribute("domain", ConfigVariables.hostURL().getHost());
         model.addAttribute("phone", ConfigVariables.phone);
+        model.addAttribute("productos",producto.findAll());
         return "index";
     }
 

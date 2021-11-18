@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 /*
- * Al agregar las anotaciones @Getter y @Setter , le dijimos a Lombok que las generara para todos los campos de la clase.
+ * Al agregar las anotaciones @Getter y @Setter, le dijimos a Lombok que las generara para todos los campos de la clase.
  * @NoArgsConstructor conducirá a una generación de constructor vacía.
  */
 @Getter @Setter @NoArgsConstructor

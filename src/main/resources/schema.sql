@@ -1,3 +1,10 @@
+drop table categoria if exists;
+drop table producto if exists;
+drop table puntuacion if exists;
+drop sequence if exists hibernate_sequence;
+
+create sequence hibernate_sequence start with 100 increment by 1;
+
 create table if not exists categoria (
      id bigint not null,
      destacada boolean not null,

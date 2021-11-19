@@ -13,7 +13,7 @@ import java.util.Date;
  * una fila en la tabla.
  */
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor(force = true)
 public class Puntuacion {
 
     // Define la clave principal
@@ -44,6 +44,10 @@ public class Puntuacion {
     public Puntuacion(int puntuacion, Producto producto) {
         this.puntuacion = puntuacion;
         this.producto = producto;
+    }
+
+    public Puntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
     }
 
 }

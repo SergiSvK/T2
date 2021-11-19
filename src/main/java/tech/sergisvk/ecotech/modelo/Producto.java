@@ -63,20 +63,15 @@ public class Producto {
     /**
      * Todo produto tendrá un propietario
      */
-    @ManyToOne
-    private Usuario propietario;
-
     /**
      * Un producto podrá estar comprado mediante una compra
      */
-    @ManyToOne
-    Compra compra;
 
     /**
      * 1:n
      */
     @OneToMany(mappedBy="producto", cascade=CascadeType.ALL, orphanRemoval=true, fetch=FetchType.EAGER)
-    private Set<Puntuacion> puntuaciones = new HashSet<Puntuacion>();
+    private Set<Puntuacion> puntuaciones = new HashSet<>();
 
     /**
      * Información que necesitamos saber sobre el producto
@@ -86,17 +81,14 @@ public class Producto {
      * @param descuento si esta de oferta o no con la cantidad a descuento
      * @param imagen URL de la imagen
      * @param categoria donde seguarda
-     * @param propietario nombre del propietario
      */
-    public Producto(String nombre, String descripcion, float pvp, float descuento, String imagen, Categoria categoria,
-                    Usuario propietario) {
+    public Producto(String nombre, String descripcion, float pvp, float descuento, String imagen, Categoria categoria) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.pvp = pvp;
         this.descuento = descuento;
         this.imagen = imagen;
         this.categoria = categoria;
-        this.propietario = propietario;
     }
     /**
      * Métodos helper

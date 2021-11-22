@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import tech.sergisvk.ecotech.DominioSesion;
-import tech.sergisvk.ecotech.config.ConfigVariables;
+import tech.sergisvk.ecotech.utilidades.Util;
 import tech.sergisvk.ecotech.servicios.CategoriaService;
 import tech.sergisvk.ecotech.servicios.ProductoService;
 
@@ -29,6 +29,7 @@ public class FrondEnd {
         this.catService = catService;
     }
 
+
     /**
      * Index
      * @param model brinda la capacidad de pasar una colección de valores y tratar estos valores como si estuvieran
@@ -37,10 +38,10 @@ public class FrondEnd {
      */
     @GetMapping({"/","","/home","/inicio","/index"})
     public String index(Model model) throws MalformedURLException {
-        model.addAttribute("nameShop", ConfigVariables.hostURL().getHost());
-        model.addAttribute("year", ConfigVariables.yearString());
-        model.addAttribute("domain", ConfigVariables.hostURL().getHost());
-        model.addAttribute("phone", ConfigVariables.phone);
+        model.addAttribute("nameShop", Util.hostURL().getHost());
+        model.addAttribute("year", Util.yearString());
+        model.addAttribute("domain", Util.hostURL().getHost());
+        model.addAttribute("phone", Util.phone);
         model.addAttribute("productos",producto.findAll());
         return "index";
     }

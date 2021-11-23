@@ -5,11 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import tech.sergisvk.ecotech.DominioSesion;
+import tech.sergisvk.ecotech.utilidades.IsNavidad;
 import tech.sergisvk.ecotech.utilidades.Util;
 import tech.sergisvk.ecotech.servicios.CategoriaService;
 import tech.sergisvk.ecotech.servicios.ProductoService;
 
 import java.net.MalformedURLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Con la anotación @Controller se podrá detectar la clase Inicio cuando realice el escaneo de componentes.
@@ -38,6 +41,29 @@ public class FrondEnd {
      */
     @GetMapping({"/","","/home","/inicio","/index"})
     public String index(Model model){
+
+        String background="claro";
+        String color="#faa";
+        String title="Título claro";
+
+        Calendar calendario = GregorianCalendar.getInstance();
+        int ihora= calendario.get(Calendar.HOUR_OF_DAY);
+        IsNavidad isNavidad = new IsNavidad(calendario);
+
+        if (isNavidad.isNavidad()) {
+            background="navidad";
+            color="#633";
+            title="Ya es navidad";
+        } else if (ihora>=22 || ihora <=7) {
+            background="oscuro";
+            color="#633";
+            title="Título oscuro";
+        }
+
+        model.addAttribute("background",background);
+        model.addAttribute("color",color);
+        model.addAttribute("title",title);
+
         model.addAttribute("nameShop", Util.hostURL().getHost());
         model.addAttribute("year", Util.yearString());
         model.addAttribute("domain", Util.hostURL().getHost());

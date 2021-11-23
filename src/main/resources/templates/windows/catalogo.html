@@ -9,16 +9,18 @@
             </h2>
 
             <p class="product__description">
-                Compre con la mejor calidad eco y con garantía de 2 años.
+                Compre con la mejor calidad y con garantía de 2 años.
             </p>
 
             <div class="product__container grid">
                 <article class="product__card">
                     <div class="product__circle"></div>
 
-                    <img th:src="producto.imagen" src="img/product1.png" alt="" class="product__img">
+                    <img src="http://placehold.it/400x400" alt="" th:src="${#strings.isEmpty(producto.imagen) ? 'http://placehold.it/350x260' : ${producto.imagen}}"
+                         class="product__img">
 
-                    <h3 class="product__title">Cacti Plant</h3>
+                    <h3 class="product__title" th:text=${producto.nombre}>Nombre del producto</h3>
+                    <span class="product__price__discount">$190.99</span>
                     <span class="product__price">$19.99</span>
 
                     <button class="button--flex product__button">

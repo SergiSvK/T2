@@ -8,5 +8,18 @@
             <!--=============== MAIN JS ===============-->
             <script src="/js/main.js"></script>
         </div>
+
+        <div th:fragment="bootstrap">
+            <!--=============== SCROLL REVEAL ===============-->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                    th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                    th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+            <!--=============== MAIN JS ===============-->
+            <script src="/js/main.js"></script>
+        </div>
     </body>
 </html>

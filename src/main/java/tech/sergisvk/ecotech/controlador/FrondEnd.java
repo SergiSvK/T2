@@ -37,7 +37,7 @@ public class FrondEnd {
      * @return index con las configuraciones pasadas
      */
     @GetMapping({"/","","/home","/inicio","/index"})
-    public String index(Model model) throws MalformedURLException {
+    public String index(Model model){
         model.addAttribute("nameShop", Util.hostURL().getHost());
         model.addAttribute("year", Util.yearString());
         model.addAttribute("domain", Util.hostURL().getHost());
@@ -49,7 +49,7 @@ public class FrondEnd {
     /**
      * Login de usuario
      * @param model
-     * @return
+     * @return /login
      */
     @GetMapping({"/login"})
     public String admin(Model model) {

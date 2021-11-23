@@ -12,86 +12,22 @@
                 Compre con la mejor calidad y con garantía de 2 años.
             </p>
 
-            <div class="product__container grid">
+            <div class="product__container grid" th:each="producto:${productos}">
                 <article class="product__card">
                     <div class="product__circle"></div>
-
+                    <!--
                     <img src="http://placehold.it/400x400" alt="" th:src="${#strings.isEmpty(producto.imagen) ? 'http://placehold.it/350x260' : ${producto.imagen}}"
-                         class="product__img">
+                         class="product__img">-->
 
                     <h3 class="product__title" th:text=${producto.nombre}>Nombre del producto</h3>
-                    <span class="product__price__discount">$190.99</span>
-                    <span class="product__price">$19.99</span>
+                    <span th:class="${producto.descuento==0} ? 'product__price' : 'product__price__discount'" th:text="${#numbers.formatDecimal(producto.pvp,1,'POINT',2,'COMMA')+'€'}">...</span>
+                    <span th:class="${producto.descuento==0} ? 'hide product__price' : ''" th:text="${#numbers.formatDecimal(producto.pvp-producto.pvp*producto.descuento,1,'POINT',2,'COMMA')+'€'}">...</span>
 
                     <button class="button--flex product__button">
                         <i class="ri-shopping-bag-line"></i>
                     </button>
                 </article>
 
-                <article class="product__card">
-                    <div class="product__circle"></div>
-
-                    <img src="img/product2.png" alt="" class="product__img">
-
-                    <h3 class="product__title">Cactus Plant</h3>
-                    <span class="product__price">$11.99</span>
-
-                    <button class="button--flex product__button">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-
-                <article class="product__card">
-                    <div class="product__circle"></div>
-
-                    <img src="img/product3.png" alt="" class="product__img">
-
-                    <h3 class="product__title">Aloe Vera Plant</h3>
-                    <span class="product__price">$7.99</span>
-
-                    <button class="button--flex product__button">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-
-                <article class="product__card">
-                    <div class="product__circle"></div>
-
-                    <img src="img/product4.png" alt="" class="product__img">
-
-                    <h3 class="product__title">Succulent Plant</h3>
-                    <span class="product__price">$5.99</span>
-
-                    <button class="button--flex product__button">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-
-                <article class="product__card">
-                    <div class="product__circle"></div>
-
-                    <img src="img/product5.png" alt="" class="product__img">
-
-                    <h3 class="product__title">Succulent Plant</h3>
-                    <span class="product__price">$10.99</span>
-
-                    <button class="button--flex product__button">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-
-                <article class="product__card">
-                    <div class="product__circle"></div>
-
-                    <img src="img/product6.png" alt="" class="product__img">
-
-                    <h3 class="product__title">Green Plant</h3>
-                    <span class="product__price">$8.99</span>
-
-                    <button class="button--flex product__button">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
             </div>
         </section>
     </body>

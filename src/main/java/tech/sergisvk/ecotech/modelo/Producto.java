@@ -15,8 +15,6 @@ import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
-@ToString
 public class Producto {
 
     @Id
@@ -60,10 +58,7 @@ public class Producto {
     @ManyToOne
     private Categoria categoria;
 
-    /**
-     * Todo produto tendrá un propietario
-     */
-    /**
+    /*
      * Un producto podrá estar comprado mediante una compra
      */
 
@@ -72,6 +67,9 @@ public class Producto {
      */
     @OneToMany(mappedBy="producto", cascade=CascadeType.ALL, orphanRemoval=true, fetch=FetchType.EAGER)
     private Set<Puntuacion> puntuaciones = new HashSet<>();
+
+    public Producto() {
+    }
 
     /**
      * Información que necesitamos saber sobre el producto
@@ -106,6 +104,70 @@ public class Producto {
                     .mapToInt(Puntuacion::getPuntuacion)
                     .average()
                     .getAsDouble();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public float getPvp() {
+        return pvp;
+    }
+
+    public void setPvp(float pvp) {
+        this.pvp = pvp;
+    }
+
+    public float getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(float descuento) {
+        this.descuento = descuento;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Set<Puntuacion> getPuntuaciones() {
+        return puntuaciones;
+    }
+
+    public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
+        this.puntuaciones = puntuaciones;
     }
 
     public double getNumeroTotalPuntuaciones() {

@@ -517,6 +517,10 @@ the website, in dark theme
     color: var(--title-color);
 }
 
+.hide{
+    display: none;
+}
+
 .product__title{
     margin-bottom: .25rem;
 }

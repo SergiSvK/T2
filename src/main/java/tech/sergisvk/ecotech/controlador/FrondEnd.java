@@ -86,4 +86,11 @@ public class FrondEnd {
         return "windows/login";
     }
 
+
+    @GetMapping({"/windows/catalogo"})
+    public String catalogo(Model model) {
+        model.addAttribute("productos",producto.findAll());
+        return "windows/catalogo";
+    }
+
 }

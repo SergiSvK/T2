@@ -11,7 +11,7 @@
 
                 <div class="nav__logo">
                     <i class="ri-leaf-line nav__logo-icon"></i>
-                    <a th:text="${nameShop}"></a>
+                    <a th:text="${#strings.capitalizeWords(nameShop)}"></a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
@@ -30,7 +30,7 @@
                             <a href="#contact" class="nav__link">Contacta</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#faqs" class="nav__link">FAQs</a>
+                            <a href="#faqs" class="nav__link">Registro</a>
                         </li>
                     </ul>
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="nav__btns">
-                    <!-- Theme change button -->
+                    <!-- Cambio de tema con el boton -->
                     <i class="ri-moon-line change-theme" id="theme-button"></i>
 
                     <div class="nav__toggle" id="nav-toggle">
@@ -49,13 +49,14 @@
                 </div>
 
                 <div class="nav__btns">
-                    <!-- Theme change button -->
-                    <i class="uil uil-user" id="theme-button"></i>
+                    <!-- Cesta de la compra, no funcional -->
+                    <i class="ri-shopping-bag-line change-theme" id="theme-button"></i>
 
                     <div class="nav__toggle" id="nav-toggle">
                         <i class="ri-menu-line"></i>
                     </div>
                 </div>
+
             </nav>
         </div>
     </body>

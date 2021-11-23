@@ -46,4 +46,18 @@ public class FrondEnd {
         return "index";
     }
 
+    /**
+     * Login de usuario
+     * @param model
+     * @return
+     */
+    @GetMapping({"/login"})
+    public String admin(Model model) {
+        model.addAttribute("nameShop", Util.hostURL().getHost());
+        model.addAttribute("year", Util.yearString());
+        model.addAttribute("domain", Util.hostURL().getHost());
+        model.addAttribute("phone", Util.phone);
+        return "windows/login";
+    }
+
 }

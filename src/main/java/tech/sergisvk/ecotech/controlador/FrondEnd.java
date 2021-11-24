@@ -60,9 +60,9 @@ public class FrondEnd {
         model.addAttribute("background",background);
         model.addAttribute("color",color);
 
-        model.addAttribute("nameShop", Util.hostURL().getHost());
+        model.addAttribute("nameShop", Util.host());
         model.addAttribute("year", Util.yearString());
-        model.addAttribute("domain", Util.hostURL().getHost());
+        model.addAttribute("domain", Util.host());
         model.addAttribute("phone", Util.phone);
         model.addAttribute("productos",producto.findAll());
         return "index";
@@ -75,13 +75,12 @@ public class FrondEnd {
      */
     @GetMapping({"/login"})
     public String admin(Model model) {
-        model.addAttribute("nameShop", Util.hostURL().getHost());
+        model.addAttribute("nameShop", Util.host());
         model.addAttribute("year", Util.yearString());
-        model.addAttribute("domain", Util.hostURL().getHost());
+        model.addAttribute("domain", Util.host());
         model.addAttribute("phone", Util.phone);
         return "windows/login";
     }
-
 
     @GetMapping({"/windows/catalogo"})
     public String catalogo(Model model) {

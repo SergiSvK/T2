@@ -10,7 +10,7 @@ public class Backend {
 
     @GetMapping({"/adminok","/admin"})
     public String adminok(Model model) {
-        model.addAttribute("nameShop", Util.hostURL().getHost());
+        model.addAttribute("nameShop", Util.host());
         model.addAttribute("mantenimiento", "productos");
         model.addAttribute("titulo", "Listado de categorías");
         return "backend/index";
@@ -18,7 +18,7 @@ public class Backend {
 
     @GetMapping({"/admin/tables"})
     public String tables(Model model) {
-        model.addAttribute("nameShop", Util.hostURL().getHost());
+        model.addAttribute("nameShop", Util.host());
         model.addAttribute("mantenimiento", "productos");
         model.addAttribute("titulo", "Listado de categorías");
         return "backend/tables";

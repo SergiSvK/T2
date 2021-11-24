@@ -9,12 +9,12 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
+@Setter
+@Getter
 public class Producto {
 
     @Id
@@ -104,70 +104,6 @@ public class Producto {
                     .mapToInt(Puntuacion::getPuntuacion)
                     .average()
                     .getAsDouble();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public float getPvp() {
-        return pvp;
-    }
-
-    public void setPvp(float pvp) {
-        this.pvp = pvp;
-    }
-
-    public float getDescuento() {
-        return descuento;
-    }
-
-    public void setDescuento(float descuento) {
-        this.descuento = descuento;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public Set<Puntuacion> getPuntuaciones() {
-        return puntuaciones;
-    }
-
-    public void setPuntuaciones(Set<Puntuacion> puntuaciones) {
-        this.puntuaciones = puntuaciones;
     }
 
     public double getNumeroTotalPuntuaciones() {

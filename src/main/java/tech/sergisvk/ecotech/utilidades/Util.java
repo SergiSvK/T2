@@ -15,8 +15,8 @@ public class Util {
      * Obtiene el host del la web
      * @return URL del host
      */
-    public static URL hostURL() {
-        URL url = null;
+    public static String host() {
+        String host = null;
         try {
             String currentURL =
                     ServletUriComponentsBuilder.
@@ -24,13 +24,13 @@ public class Util {
                             build().
                             toUriString();
 
-            url = new URL(currentURL);
+            host = new URL(currentURL).getHost();
 
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            host = "none";
         }
 
-        return url;
+        return host;
     }
 
     /**

@@ -77,5 +77,18 @@
         <p class="footer__copy">Copyright &#169; <a th:text="${year} "></a> <a th:text="${#strings.capitalizeWords(nameShop)}"></a>. All rigths reserved.</p>
       </footer>
     </div>
+
+    <!-- Footer Admin-->
+    <div th:fragment="pieAdmin">
+
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <p class="footer__copy">Copyright &#169; <a th:text="${year} "></a> <a th:text="${#strings.capitalizeWords(nameShop)}"></a>. All rigths reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- End of Footer -->
   </body>
 </html>

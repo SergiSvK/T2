@@ -44,7 +44,6 @@ public class FrondEnd {
 
         String background="claro";
         String color="#faa";
-        String title="Título claro";
 
         Calendar calendario = GregorianCalendar.getInstance();
         int ihora= calendario.get(Calendar.HOUR_OF_DAY);
@@ -53,16 +52,13 @@ public class FrondEnd {
         if (isNavidad.isNavidad()) {
             background="navidad";
             color="#633";
-            title="Ya es navidad";
         } else if (ihora>=22 || ihora <=7) {
             background="oscuro";
-            color="#633";
-            title="Título oscuro";
+            color="#fff";
         }
 
         model.addAttribute("background",background);
         model.addAttribute("color",color);
-        model.addAttribute("title",title);
 
         model.addAttribute("nameShop", Util.hostURL().getHost());
         model.addAttribute("year", Util.yearString());

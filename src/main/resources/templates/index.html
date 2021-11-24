@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-    <head th:replace="head/head :: mihead"></head>
+
+    <head><th:block th:insert="~{head/head :: mihead}"/></head>
 
     <-! El color de fondo va a cambiar dependiendo de la hora del día y del evento del año -->
     <body th:bgcolor="${color}">

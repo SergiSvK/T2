@@ -8,15 +8,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Util {
-    public final static String domain = "eco.tech";
     public final static String phone ="+999 888 777";
+    public final static String ruta = "/examples/log.txt";
 
     /**
      * Obtiene el host del la web
      * @return URL del host
      */
     public static String host() {
-        String host = null;
+        String host;
         try {
             String currentURL =
                     ServletUriComponentsBuilder.

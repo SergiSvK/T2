@@ -17,7 +17,7 @@ public class Fecha {
 
     private Date date;
 
-    private Fecha(int dia, int mes, int anyo) {
+    Fecha(int dia, int mes, int anyo) {
         this.dia = dia;
         this.mes = mes;
         this.anyo = anyo;

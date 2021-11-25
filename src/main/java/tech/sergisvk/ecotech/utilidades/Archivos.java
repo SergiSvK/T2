@@ -20,7 +20,7 @@ public class Archivos {
         Path emptyFile = Paths.get(paths);
         if (Files.notExists(emptyFile)) {
             try {
-                emptyFile = Files.createFile(Paths.get(paths));
+                Files.createFile(Paths.get(paths));
             } catch (IOException e) {
                 System.out.println("Error a la creacción de archivos");
             }

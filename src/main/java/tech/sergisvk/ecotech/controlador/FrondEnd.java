@@ -42,23 +42,16 @@ public class FrondEnd {
     @GetMapping({"/","","/home","/inicio","/index"})
     public String index(Model model){
 
-        String background="claro";
-        String color="#faa";
-
         Calendar calendario = GregorianCalendar.getInstance();
         int ihora= calendario.get(Calendar.HOUR_OF_DAY);
         IsNavidad isNavidad = new IsNavidad(calendario);
 
+        /*
         if (isNavidad.isNavidad()) {
-            background="navidad";
-            color="#633";
+            model.addAttribute("css","navidad");
         } else if (ihora>=22 || ihora <=7) {
-            background="oscuro";
-            color="#fff";
-        }
-
-        model.addAttribute("background",background);
-        model.addAttribute("color",color);
+            model.addAttribute("css","oscuro");
+        }*/
 
         model.addAttribute("nameShop", Util.host());
         model.addAttribute("year", Util.yearString());
@@ -74,12 +67,27 @@ public class FrondEnd {
      * @return /login
      */
     @GetMapping({"/login"})
-    public String admin(Model model) {
+    public String login(Model model) {
         model.addAttribute("nameShop", Util.host());
         model.addAttribute("year", Util.yearString());
         model.addAttribute("domain", Util.host());
         model.addAttribute("phone", Util.phone);
         return "windows/login";
+    }
+
+    /**
+     * Login de usuario
+     * @param model
+     * @return /login
+     */
+    @GetMapping({"/productos"})
+    public String productos(Model model) {
+        model.addAttribute("nameShop", Util.host());
+        model.addAttribute("year", Util.yearString());
+        model.addAttribute("domain", Util.host());
+        model.addAttribute("phone", Util.phone);
+        model.addAttribute("productos",producto.findAll());
+        return "windows/productos";
     }
 
     @GetMapping({"/windows/catalogo"})

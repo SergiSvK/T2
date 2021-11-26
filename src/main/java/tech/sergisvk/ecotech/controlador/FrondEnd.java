@@ -46,12 +46,14 @@ public class FrondEnd {
         int ihora= calendario.get(Calendar.HOUR_OF_DAY);
         IsNavidad isNavidad = new IsNavidad(calendario);
 
-        /*
+
         if (isNavidad.isNavidad()) {
             model.addAttribute("css","navidad");
         } else if (ihora>=22 || ihora <=7) {
             model.addAttribute("css","oscuro");
-        }*/
+        }else{
+            model.addAttribute("css","style");
+        }
 
         model.addAttribute("nameShop", Util.host());
         model.addAttribute("year", Util.yearString());

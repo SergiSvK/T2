@@ -511,7 +511,7 @@ the website, in dark theme
 }
 
 .product__title,
-.product__price{
+.product--price{
     font-size: var(--small-font-size);
     font-weight: var(--font-semi-bold);
     color: var(--title-color);
@@ -1011,11 +1011,11 @@ the website, in dark theme
         height: 110px;
     }
     .product__title,
-    .product__price{
+    .product--price{
         font-size: var(--normal-font-size);
     }
 
-    .product__price__discount{
+    .product--price--discount{
         font-size: var(--normal-font-size);
         text-decoration:line-through;
         color: red;
